@@ -8,14 +8,14 @@ buildscript {
 
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.5.14'
+	id 'org.springframework.boot' version '3.5.15'
 	id 'io.spring.dependency-management' version '1.1.6'
 	id "org.openapi.generator" version "7.17.0"
 	id 'jacoco'
 }
 
 group = 'uk.org.ca.stub'
-version = '2.0.4-SNAPSHOT'
+version = '2.0.5-SNAPSHOT'
 
 java {
 	sourceCompatibility = JavaVersion.VERSION_21
@@ -25,15 +25,17 @@ java {
 ext {
 	set('commons-lang3.version', '3.20.0')
 	set('jackson-bom.version', '2.21.5')         // GHSA-r7wm-3cxj-wff9, CVE-2026-54512/13/15/16/17/18, CVE-2026-59888/89, GHSA-mhm7-754m-9p8w
-	set('tomcat.version', '10.1.55')             // CVE-2026-24734 (7.5 HIGH)
-	set('spring-framework.version', '6.2.18')    // CVE-2026-22737, CVE-2026-22735, CVE-2026-22745, CVE-2026-22741
+	set('tomcat.version', '10.1.59')             // CVE-2026-24734 (7.5 HIGH), CVE-2026-65182/65905/68525/65182/65905/68525
+	set('spring-framework.version', '6.2.19')    // CVE-2026-22737, CVE-2026-22735, CVE-2026-22745, CVE-2026-22741, CVE-2026-41841/41842/41843/41844/41845/41846/41848/41850/41851/41852/41853/41854
+	set('log4j2.version', '2.25.5')              // CVE-2026-49844
 	set('logback.version', '1.5.34')             // CVE-2026-10532, CVE-2026-9828
 }
 
 dependencies {
-	implementation 'org.apache.httpcomponents.core5:httpcore5:5.3.6'
+	implementation 'org.apache.httpcomponents.core5:httpcore5:5.4.3'
+	implementation 'org.apache.httpcomponents.core5:httpcore5-h2:5.4.3'
 	implementation( 'org.springframework.boot:spring-boot-starter-web')
-	implementation 'org.apache.httpcomponents.client5:httpclient5:5.4.4'
+	implementation 'org.apache.httpcomponents.client5:httpclient5:5.6.3'
 	implementation ('org.springframework.boot:spring-boot-starter-tomcat')
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation ('org.springframework.boot:spring-boot-starter-validation')
