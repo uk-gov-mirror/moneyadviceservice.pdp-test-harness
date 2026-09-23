@@ -35,7 +35,7 @@ RUN echo " :::::::::::::::::::: Running on $BUILDPLATFORM, building for $TARGETP
  && chown 1000:1000 -R /cas \
  && chmod 755 /cas/mTLS \
  && apk upgrade --no-cache \
- && apk add --no-cache bash dos2unix openssl \
+ && apk add --no-cache bash dos2unix "libcrypto3>=3.5.8-r0" "libssl3>=3.5.8-r0" "openssl>=3.5.8-r0" \
  && dos2unix /cas/start_stub_wrapper.sh /cas/cert-manager.sh
 
 USER 1000:1000

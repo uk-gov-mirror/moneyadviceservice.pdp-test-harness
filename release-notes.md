@@ -2,6 +2,9 @@
 
 The following document shows the changes introduced in each version of the C&A Stub.
 
+## v2.0.5 - 21 Sep 2026
+* Updated various dependencies to address published security vulnerabilities.
+
 ## v2.0.4 - 30 Jul 2026
 * Updated various dependencies to address published security vulnerabilities.
 
